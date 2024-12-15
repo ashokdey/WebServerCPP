@@ -14,20 +14,17 @@ namespace AD {
     struct sockaddr_in address;
 
     public:
-      Socket(
-        int domain, int service, 
-        int protocol, int port,
-        u_long interface,
-      );
+      Socket(int domain, int service, int protocol, int port, u_long interface);
 
       virtual int connect_to_network(
         int sck, struct sockaddr_in address
       ) = 0;
 
-      void test_connection(int sck);
+      void test_connection(int entity);
       struct sockaddr_in get_address();
       int get_socket();
       int get_connection();
+      void set_connection(int connection);
   };
 }
 

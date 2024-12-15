@@ -10,12 +10,12 @@ AD::Socket::Socket(int domain, int service, int protocol, int port, u_long inter
   // make the connection
   int sck = socket(domain, service, protocol);
   test_connection(sck);
-  connection = connect_to_network(sck, address);
+  
 }
 
-void AD::Socket::test_connection(int item_to_test)
+void AD::Socket::test_connection(int entity)
 {
-  if (item_to_test < 0) 
+  if (entity < 0) 
   {
     perror("Failed to connect");
     exit(EXIT_FAILURE);
@@ -35,4 +35,9 @@ int AD::Socket::get_socket()
 int AD::Socket::get_connection() 
 {
   return connection;
+}
+
+void AD::Socket::set_connection(int connection)
+{
+  this->connection = connection;
 }
