@@ -33,12 +33,3 @@ int AD::Socket::get_socket()
   return sck;
 }
 
-int AD::Socket::get_connection() 
-{
-  return connection;
-}
-
-void AD::Socket::set_connection(int connection)
-{
-  this->connection = connection;
-}

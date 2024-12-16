@@ -13,5 +13,5 @@ AD::ListeningSocket::ListeningSocket(
 
 void AD::ListeningSocket::start_listening()
 {
-  listening = listen(BindingSocket::get_connection(), backlog); 
+  listening = listen(Socket::get_socket(), backlog); 
 }
