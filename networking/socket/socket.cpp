@@ -9,7 +9,7 @@ AD::Socket::Socket(int domain, int service, int protocol, int port, u_long inter
   address.sin_addr.s_addr = htonl(interface);
 
   // make the connection
-  int sck = socket(domain, service, protocol);
+  sck = socket(domain, service, protocol);
   test_connection(sck);
   
 }
