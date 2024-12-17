@@ -69,3 +69,18 @@ Test Server: The TestServer class extends the Server class and handles:
 Socket Abstraction:
 
 - Provides reusable components for binding, listening, and handling sockets.
+
+### Screens 
+
+The browser making the request and getting the response 
+
+![browser view](./assets/screens/1.png)
+
+The server logs 
+
+![browser view](./assets/screens/2.png)
+
+
+#### Credits 
+
+Thanks to [Eric's Videos](https://www.youtube.com/@eom-dev) which made this possible! 
