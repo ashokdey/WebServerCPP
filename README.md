@@ -13,48 +13,58 @@ This project provides a modular C++ networking solution with reusable components
 
 ```bash 
 
+.
+├── BUILD.bazel
+├── MODULE.bazel
+├── MODULE.bazel.lock
 ├── README.md
-├── _weblib.hpp
+├── assets
+│   └── screens
+│       ├── 1.png
+│       └── 2.png
 ├── main_server.cpp
 ├── main_socket.cpp
-├── networking
-│   ├── _network_lib.hpp
-│   ├── server
-│   │   ├── _server_lib.hpp
-│   │   ├── server.cpp
-│   │   ├── server.hpp
-│   │   ├── test_server.cpp
-│   │   └── test_server.hpp
-│   └── socket
-│       ├── _socket_lib.hpp
-│       ├── binding_socket.cpp
-│       ├── binding_socket.hpp
-│       ├── listening_socket.cpp
-│       ├── listening_socket.hpp
-│       ├── socket.cpp
-│       └── socket.hpp
-├── server # server executable (available after build)
-└── socket # socket executable (available after build)
+└── networking
+    ├── BUILD.bazel
+    ├── lib
+    │   ├── BUILD.bazel
+    │   ├── binding_socket
+    │   │   ├── BUILD.bazel
+    │   │   ├── binding_socket.cpp
+    │   │   └── binding_socket.hpp
+    │   ├── lib.hpp
+    │   ├── listening_socket
+    │   │   ├── BUILD.bazel
+    │   │   ├── listening_socket.cpp
+    │   │   └── listening_socket.hpp
+    │   └── socket
+    │       ├── BUILD.bazel
+    │       ├── socket.cpp
+    │       └── socket.hpp
+    └── server
+        ├── BUILD.bazel
+        ├── _server_lib.hpp
+        ├── server.cpp
+        ├── server.hpp
+        ├── test_server.cpp
+        └── test_server.hpp
 
 ```
 
 ### Compilation 
 
-To compile the test server 
+Using [Bazel](https://bazel.build) for compiling and runnig the applications 
 
-```bash 
+- Buidling the `main_socket` lib ```bash bazel build //:main_socket ```
+- Running the `main_socket` lib ```bash bazel run //:main_socket ```
+- Buidling the `main_server` lib ```bash bazel build //:main_server ```
+- Running the `main_server` lib ```bash bazel run //:main_socket ```
 
-g++ -std=c++11 -I./networking   main_server.cpp networking/*/*.cpp  -o server
+If you are willing to build the supporting the libraries
 
-```
+- Buidling the socket lib ```bash bazel build //networking/lib/socket:socket ```
+- Buidling the server lib ```bash bazel build //networking/server/server:server ```
 
-To compile the socket listener 
-
-```bash 
-
-g++ -std=c++11 -I./networking   main_socket.cpp networking/*/*.cpp  -o socket
-
-```
 
 ### Working Explained 
 
@@ -80,6 +90,23 @@ The server logs
 
 ![browser view](./assets/screens/2.png)
 
+#### Using G++? 
+
+To compile the test server 
+
+```bash 
+
+g++ -std=c++11 -I./networking   main_server.cpp networking/*/*.cpp  -o server
+
+```
+
+To compile the socket listener 
+
+```bash 
+
+g++ -std=c++11 -I./networking   main_socket.cpp networking/*/*.cpp  -o socket
+
+```
 
 #### Credits 
 
