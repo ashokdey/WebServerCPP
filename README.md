@@ -18,10 +18,6 @@ This project provides a modular C++ networking solution with reusable components
 ├── MODULE.bazel
 ├── MODULE.bazel.lock
 ├── README.md
-├── assets
-│   └── screens
-│       ├── 1.png
-│       └── 2.png
 ├── main_server.cpp
 ├── main_socket.cpp
 └── networking
@@ -43,7 +39,6 @@ This project provides a modular C++ networking solution with reusable components
     │       └── socket.hpp
     └── server
         ├── BUILD.bazel
-        ├── _server_lib.hpp
         ├── server.cpp
         ├── server.hpp
         ├── test_server.cpp
