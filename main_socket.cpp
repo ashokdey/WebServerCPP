@@ -1,5 +1,7 @@
 #include <iostream>
-#include "_weblib.hpp"
+#include "networking/lib/socket/socket.hpp"
+#include "networking/lib/listening_socket/listening_socket.hpp"
+#include "networking/lib/binding_socket/binding_socket.hpp"
 
 int main() 
 {

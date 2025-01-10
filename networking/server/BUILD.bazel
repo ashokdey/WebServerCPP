@@ -1,0 +1,25 @@
+cc_library(
+  name="server",
+  srcs=["server.cpp"],
+  hdrs=["server.hpp"],
+  deps=[
+    "//networking/lib/socket:socket",
+    "//networking/lib/listening_socket:listening_socket",
+    "//networking/lib/binding_socket:binding_socket",
+  ],
+  visibility = ["//visibility:public"],
+)
+
+cc_library(
+  name="test_server",
+  srcs=["test_server.cpp"],
+  hdrs=["test_server.hpp"],
+  deps=[
+    ":server",
+    "//networking/lib/socket:socket",
+    "//networking/lib/listening_socket:listening_socket",
+    "//networking/lib/binding_socket:binding_socket",
+  ],
+  visibility = ["//visibility:public"],
+)
+

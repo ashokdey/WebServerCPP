@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <iostream>
 
-#include "_weblib.hpp"
+
+#include "networking/server/test_server.hpp"
 
 int main() {
   AD::TestServer t;

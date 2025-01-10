@@ -1,0 +1,23 @@
+cc_binary(
+  name="main_server",
+  srcs=[
+    "main_server.cpp"
+  ],
+  deps=[
+    "//networking/server:test_server",
+  ],
+  visibility = ["//visibility:public"],
+)
+
+cc_binary(
+  name="main_socket",
+  srcs=[
+    "main_socket.cpp"
+  ],
+  deps=[
+    "//networking/lib/socket:socket",
+    "//networking/lib/listening_socket:listening_socket",
+    "//networking/lib/binding_socket:binding_socket",
+  ],
+  visibility = ["//visibility:public"],
+)

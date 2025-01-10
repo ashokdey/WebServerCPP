@@ -1,8 +1,8 @@
 #ifndef ListeningSocket_hpp
 #define ListeningSocket_hpp
 
-#include "socket.hpp"
-#include "binding_socket.hpp"
+#include "../binding_socket/binding_socket.hpp"
+#include "listening_socket.hpp"
 
 namespace AD 
 {

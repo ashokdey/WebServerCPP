@@ -1,0 +1,7 @@
+cc_library(
+  name="binding_socket",
+  srcs=["binding_socket.cpp"],
+  hdrs=["binding_socket.hpp"],
+  deps=["//networking/lib/socket:socket"],
+  visibility = ["//visibility:public"],
+)

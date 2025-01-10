@@ -1,0 +1,9 @@
+"""
+This module used for compiling and running dll c
+"""
+module(
+    name = "web-server-cpp",
+    version = "0.1.0",
+)
+
+bazel_dep(name = "rules_cc", version = "0.1.0")  # Required for C++/C toolchain support

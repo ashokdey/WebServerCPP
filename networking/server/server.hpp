@@ -1,7 +1,9 @@
 #ifndef server_hpp
 #define server_hpp 
 
-#include "../socket/_socket_lib.hpp"
+#include "../lib/socket/socket.hpp"
+#include "../lib/listening_socket/listening_socket.hpp"
+#include "../lib/binding_socket/binding_socket.hpp"
 
 namespace AD 
 {

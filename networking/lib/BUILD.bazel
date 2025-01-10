@@ -1,0 +1,11 @@
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+  name="lib",
+  hdrs=["lib.hpp"],
+  deps=[
+    "//networking/lib/socket:socket",
+    "//networking/lib/listening_socket:listening_socket",
+    "//networking/lib/binding_socket:binding_socket",
+  ]
+)

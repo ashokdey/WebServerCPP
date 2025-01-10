@@ -1,0 +1,11 @@
+cc_library(
+  name="listening_socket",
+  srcs=["listening_socket.cpp"],
+  hdrs=["listening_socket.hpp"],
+  deps=[
+    "//networking/lib/socket:socket",
+    "//networking/lib/binding_socket:binding_socket",
+    ],
+  visibility = ["//visibility:public"],
+)
+
